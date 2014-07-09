@@ -10,13 +10,13 @@ myApp.service('dataService', function($http) {
         var total = 0;
         for (var i = data.length - 1; i >= 0; i--) {
           var entry = data[i];
-          if (entry.account === "Dental Plan") {
+          if (entry.account === 'Dental Plan') {
             total += parseFloat(entry.amount);
           }
         };
         callbackFunc(total);
     }).error(function(){
-        console.log("error");
+        console.log('error');
     });
   }
 });
