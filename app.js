@@ -13,12 +13,13 @@ myApp.service('dataService', function($http) {
           if (entry.account === 'Dental Plan') {
             total += parseFloat(entry.amount);
           }
-        };
+        }
+        total = total.toFixed(2);
         callbackFunc(total);
     }).error(function(){
         console.log('error');
     });
-  }
+  };
 });
 
 myApp.controller('MainController', function($scope, dataService) {
